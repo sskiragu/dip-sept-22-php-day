@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .form-input {
+            margin-bottom: 1%;
+        }
+    </style>
 </head>
 <body>
-    <div>
+    <div class="signup-form">
         <?php include_once "top-nav.php"; ?>
         <form action="signup.php" method="post">
-            <div><input type="text" name="username" placeholder="Enter username"></div>
-            <div><input type="email" name="email" placeholder="Enter email"></div>
-            <div><input type="password" name="password" placeholder="Enter password"></div>
-            <div><input type="submit" name="signup" value="Signup"></div>
+            <div class="form-input"><input type="text" name="username" placeholder="Enter username"></div>
+            <div class="form-input"><input type="email" name="email" placeholder="Enter email"></div>
+            <div class="form-input"><input type="password" name="password" placeholder="Enter password"></div>
+            <div class="form-input"><input type="submit" name="signup" value="Signup"></div>
         </form>
     </div>
 </body>
