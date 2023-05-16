@@ -31,6 +31,10 @@ if (isset($_POST['signup'])) {
     include_once "database-config.php";
 
     $sql = "INSERT INTO users(username, email, password) VALUES('$username', '$email', '$pwd')";
-    $database_connection->query($sql);
+   if ($database_connection->query($sql) === TRUE) {
+    echo "Successfully registered";
+   }else{
+    echo "Registration failed";
+   }
 }
 ?>
