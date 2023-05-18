@@ -28,7 +28,7 @@
                 <th colspan='2'>Action</th>
             </tr>";
             include_once "database-config.php";
-            $sql = "SELECT * FROM users WHERE username='john'";
+            $sql = "SELECT * FROM users WHERE username='peter'";
             $result = $database_connection->query($sql);
             // var_dump($result);
             $row = $result->fetch_assoc();
@@ -36,7 +36,7 @@
                     <td>" . $row['username']. "</td>
                     <td>".$row['email']."</td>
                     <td>".$row['password']."</td>
-                    <td>Edit</td>
+                    <td><a href='edit.php?id=$row[id]'><i class='bi bi-pencil-square text-success'></i></a></td>
                     <td><a href='delete.php?id=$row[id]'><i class='bi bi-archive-fill text-danger'></i></a></td>
                 </tr>";
         echo "</table>";
