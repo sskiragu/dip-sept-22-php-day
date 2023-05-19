@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +29,8 @@
                 <th colspan='2'>Action</th>
             </tr>";
             include_once "database-config.php";
-            $sql = "SELECT * FROM users WHERE username='peter'";
+            $user_logged_in = $_SESSION['username'];
+            $sql = "SELECT * FROM users WHERE username='$user_logged_in'";
             $result = $database_connection->query($sql);
             // var_dump($result);
             $row = $result->fetch_assoc();
