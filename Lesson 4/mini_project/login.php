@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,6 +31,7 @@ echo "<br>";
     $sql = "SELECT * FROM users WHERE username='$username' AND password='$pwd'";
     $result = $database_connection->query($sql);
     if($result->num_rows > 0){
+        $_SESSION['username'] = $username;
         header('Location: dashboard.php');
     }else{
         echo "User not found";
