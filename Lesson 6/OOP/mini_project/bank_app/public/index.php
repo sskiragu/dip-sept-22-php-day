@@ -1,23 +1,11 @@
 <?php
 //Entry point
-//Include necessary files
-require_once __DIR__ . '../config/db.php';
-require_once __DIR__ . '../classes/User.php';
 
-//Handle requests
-
-$action = "login";
-
-switch ($action) {
-    case 'login':
-        require_once __DIR__ . '../views/login.php';
-        break;
-    case '':
-        require_once __DIR__ . '../views/home.php';
-        break;
+//check if user logged in or registered
+if (isset($_SESSION['user_id'])) {
     
-    default:
-        require_once __DIR__ . '../views/404.php';
-        break;
 }
+
+// Display company website
+include __DIR__ . '/../views/website.html';
 ?>
