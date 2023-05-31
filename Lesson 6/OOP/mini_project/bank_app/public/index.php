@@ -7,5 +7,5 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Display company website
-include __DIR__ . '/../views/website.html';
+include __DIR__ . '/../views/website.php';
 ?>

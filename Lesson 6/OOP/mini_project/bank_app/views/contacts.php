@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php include 'navbar.php'?>
-    <h1>Welcome home</h1>
+<?php include 'navbar.php'?>
+    <h1>Our contacts</h1>
 </body>
 </html>

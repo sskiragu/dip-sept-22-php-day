@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Login</h1>
+<?php include 'navbar.php'?>
+    <h1>Login form</h1>
 </body>
 </html>
