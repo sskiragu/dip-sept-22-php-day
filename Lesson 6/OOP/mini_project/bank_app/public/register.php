@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['registration_completed'] = true;
 
         // Redirect to the login page after successful registration
-        // header('Location: login.php');
+        header('Location: login.php');
         exit();
     }
 }

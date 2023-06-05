@@ -34,5 +34,31 @@ class UserManager {
         return null;
     }
 
+    public function getUserById($userId) {
+        // Retrieve user data from the database based on the provided user ID
+        $sql = "SELECT * FROM users WHERE user_id = ?";
+        $params = array($userId);
+        $result = $this->db->execute($sql, $params); // Replace with your database query execution logic
+
+        if ($result && $result->rowCount() > 0) {
+            return $result->fetch(PDO::FETCH_ASSOC);
+        }
+
+        return null;
+    }
+
+    public function getTransactionsByUserId($userId) {
+        // Retrieve transactions associated with the provided user ID
+        $sql = "SELECT * FROM transactions WHERE user_id = ?";
+        $params = array($userId);
+        $result = $this->db->execute($sql, $params); // Replace with your database query execution logic
+
+        if ($result && $result->rowCount() > 0) {
+            return $result->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        return array();
+    }
+
     // Add other methods for user management, such as getUserById(), updateProfile(), deleteProfile(), etc.
 }
