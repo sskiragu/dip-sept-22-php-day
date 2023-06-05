@@ -1,13 +1,29 @@
+<!-- views/register.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Registration</title>
+    <!-- Add CSS stylesheets and other necessary meta tags and scripts -->
 </head>
 <body>
 <?php include 'navbar.php'?>
-    <h1>Register form</h1>
+    <!-- Registration Form -->
+    <h2>User Registration</h2>
+    <form method="POST" action="../public/register.php">
+        <div>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+        </div>
+        <div>
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
+        </div>
+        <div>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+        </div>
+        <div>
+        <button type="submit" name="register">Signup</button>
+        </div>
+    </form>
+
+    <!-- Add CSS styles for the page -->
 </body>
 </html>
