@@ -60,5 +60,19 @@ class UserManager {
         return array();
     }
 
+    public function updateAccountBalance($accountNumber, $newBalance) {
+        $sql = "UPDATE users SET balance = ? WHERE account_number = ?";
+        $params = array($newBalance, $accountNumber);
+        $this->db->execute($sql, $params);
+    }
+
+    public function getAccountBalance($accountNumber) {
+        $sql = "SELECT balance FROM users WHERE account_number = ?";
+        $params = array($accountNumber);
+        $result = $this->db->execute($sql, $params); // Execute the query
+        $row = $result->fetch(); // Fetch the result row
+        return $row['balance']; // Return the balance column value
+    }
+
     // Add other methods for user management, such as getUserById(), updateProfile(), deleteProfile(), etc.
 }

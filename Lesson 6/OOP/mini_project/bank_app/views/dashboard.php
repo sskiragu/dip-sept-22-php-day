@@ -30,7 +30,7 @@
     <h2>Transfer Funds</h2>
     <form method="POST" action="process_transfer.php">
         <label for="recipient">Recipient:</label>
-        <input type="text" name="recipient" id="recipient" required>
+        <input type="text" name="recipient_account" id="recipient" required>
 
         <label for="amount">Amount:</label>
         <input type="number" name="amount" id="amount" required>
