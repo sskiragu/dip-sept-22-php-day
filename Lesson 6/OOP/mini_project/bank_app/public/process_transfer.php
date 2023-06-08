@@ -4,8 +4,6 @@ require_once '../classes/UserManager.php';
 
 session_start();
 
-echo $_SESSION['user_id'] . " ". $_SESSION['account_number'];
-
 // if (isset($_SESSION['user_id'])) {
 //     header('Location: dashboard.php');
 //     exit();
@@ -14,6 +12,7 @@ echo $_SESSION['user_id'] . " ". $_SESSION['account_number'];
 // Retrieve form inputs
 $recipientAccount = $_POST['recipient_account'];
 $transferAmount = $_POST['amount'];
+$senderID = $_SESSION['user_id'];
 
 // Validate form inputs (add your own validation logic)
 
@@ -41,6 +40,8 @@ $userManager->updateAccountBalance($senderAccountNumber, $newSenderBalance);
 // Update recipient's account balance
 $newRecipientBalance = $recipientBalance + $transferAmount;
 $userManager->updateAccountBalance($recipientAccount, $newRecipientBalance);
+
+$userManager->recordTransaction($senderAccountNumber, $recipientAccount, $transferAmount, $senderID);
 
 // Display success message to the user
 echo "Transfer completed successfully.";

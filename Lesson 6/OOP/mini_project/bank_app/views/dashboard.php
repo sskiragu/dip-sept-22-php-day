@@ -14,15 +14,19 @@
     <h2>Transactions</h2>
     <table>
         <tr>
-            <th>Date</th>
-            <th>Description</th>
+            <th>Transaction ID</th>
+            <th>Sender Account</th>
+            <th>Recipient Account</th>
             <th>Amount</th>
+            <th>date_time</th>
         </tr>
         <?php foreach ($transactions as $transaction): ?>
             <tr>
-                <td><?= $transaction['transaction_date'] ?></td>
-                <td><?= $transaction['description'] ?></td>
+                <td><?= $transaction['id'] ?></td>
+                <td><?= $transaction['sender_account'] ?></td>
+                <td><?= $transaction['recipient_account'] ?></td>
                 <td><?= $transaction['amount'] ?></td>
+                <td><?= $transaction['date_time'] ?></td>
             </tr>
         <?php endforeach; ?>
     </table>

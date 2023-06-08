@@ -15,10 +15,26 @@ class UserManager {
     }
 
     public function registerUser($user) {
+        // Generate account_number for the new user
+        $accountNumber = $this->generateAccountNumber();
+
+        // Set initial balance for the new user
+        $initialBalance = 0;
+
         // Save the user data to the database
-        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-        $params = array($user->getUsername(), $user->getEmail(), $user->getPassword());
-        $this->db->execute($sql, $params); // Replace with your database query execution logic
+        $sql = "INSERT INTO users (username, email, password, account_number, balance) VALUES (?, ?, ?, ?, ?)";
+        $params = array($user->getUsername(), $user->getEmail(), $user->getPassword(), $accountNumber, $initialBalance);
+        $this->db->execute($sql, $params);
+    }
+
+    private function generateAccountNumber() {
+        // Generate a unique account number
+        // Implement your own logic to generate account numbers, e.g., using random numbers or a combination of user details
+
+        // Example: Generate a 10-digit account number
+        $accountNumber = mt_rand(1000000000, 9999999999);
+
+        return $accountNumber;
     }
 
     public function loginUser($username, $password) {
@@ -58,6 +74,15 @@ class UserManager {
         }
 
         return array();
+    }
+
+    public function recordTransaction($senderAccount, $recipientAccount, $amount, $userID) {
+        $dateTime = date('Y-m-d H:i:s');
+
+        // Insert the transaction into the database
+        $sql = "INSERT INTO transactions (sender_account, recipient_account, amount, date_time, user_id) VALUES (?, ?, ?, ?, ?)";
+        $params = array($senderAccount, $recipientAccount, $amount, $dateTime, $userID);
+        $this->db->execute($sql, $params);
     }
 
     public function updateAccountBalance($accountNumber, $newBalance) {
