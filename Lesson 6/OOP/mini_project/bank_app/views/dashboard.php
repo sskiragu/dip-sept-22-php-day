@@ -34,7 +34,6 @@
 <?php include 'sidebar.php'; ?>
     
     <div class="main-content">
-  <div class="main-content">
     <?php
     // Check the value of a variable or request parameter to determine the current functionality
     if (isset($_GET['action'])) {
@@ -62,7 +61,6 @@
       include 'default.php';
     }
     ?>
-    </div>
 </div>
 
     <script src="js/script.js"></script>

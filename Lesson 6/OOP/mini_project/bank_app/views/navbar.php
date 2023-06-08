@@ -1,12 +1,20 @@
 <style>
-        /* styles.css */
+  /* styles.css */
 
-/* Navigation Menu */
+/* Navigation Bar */
 .nav-menu {
-  list-style: none;
+  background-color: #333;
+  height: 50px;
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .nav-menu li {
@@ -15,27 +23,12 @@
 
 .nav-menu li a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: bold;
 }
 
 .nav-menu li a:hover {
-  color: #f00;
-}
-
-/* Button Styles */
-.button {
-  display: inline-block;
-  padding: 5px 20px;
-  background-color: green;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: green;
+  color: #ff5050;
 }
 
     </style>
