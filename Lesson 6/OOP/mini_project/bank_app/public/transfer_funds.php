@@ -4,10 +4,10 @@ require_once '../classes/UserManager.php';
 
 session_start();
 
-// if (isset($_SESSION['user_id'])) {
-//     header('Location: dashboard.php');
-//     exit();
-// }
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
 
 // Retrieve form inputs
 $recipientAccount = $_POST['recipient_account'];
